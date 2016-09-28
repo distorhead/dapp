@@ -2,14 +2,14 @@ module Dapp
   module Builder
     # Chef
     class Chef < Base
+      CHEFDK_VERSION = '0.17.3-2'
+
       LOCAL_COOKBOOK_CHECKSUM_PATTERNS = %w(
         attributes/**/*
         recipes/**/*
         files/**/*
         templates/**/*
       ).freeze
-
-      DEFAULT_CHEFDK_IMAGE = 'dappdeps/chefdk:0.17.3-1'.freeze # TODO: config, DSL, DEFAULT_CHEFDK_IMAGE
 
       %i(before_install install before_setup setup build_artifact).each do |stage|
         define_method("#{stage}_checksum") do
@@ -162,11 +162,11 @@ module Dapp
       end
 
       def chefdk_image
-        DEFAULT_CHEFDK_IMAGE # TODO: config, DSL, DEFAULT_CHEFDK_IMAGE
+        "dappdeps/chefdk:#{CHEFDK_VERSION}"
       end
 
       def chefdk_container_name # FIXME: hashsum(image) or dockersafe()
-        chefdk_image.tr('/', '_').tr(':', '_')
+        "dappdeps_chefdk_#{CHEFDK_VERSION}"
       end
 
       def chefdk_container
