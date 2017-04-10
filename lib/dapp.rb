@@ -18,7 +18,7 @@ require 'inifile'
 require 'rugged'
 require 'rubygems/package'
 require 'murmurhash3'
-
+require 'kubeclient'
 require 'net_status'
 
 require 'dapp/version'
@@ -195,6 +195,7 @@ require 'dapp/dimg/dimg/tags'
 require 'dapp/dimg/dimg/stages'
 require 'dapp/dimg/dimg'
 require 'dapp/dimg/artifact'
+require 'dapp/deployment/kubernetes'
 
 module Dapp
   def self.root
