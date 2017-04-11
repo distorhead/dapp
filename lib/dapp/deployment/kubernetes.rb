@@ -6,7 +6,7 @@ module Dapp
 
         @client = Kubeclient::Client.new(
           config.context.api_endpoint,
-          config.context.api_version,
+          'extensions/v1beta',
           ssl_options: config.context.ssl_options
         )
       end

@@ -5,7 +5,7 @@ PATH
       excon (>= 0.45.4, < 1.0)
       i18n (~> 0.7)
       inifile (~> 3.0.0)
-      kubeclient (~> 1.1.2)
+      kubeclient (<= 3.0)
       mixlib-cli (>= 1.0, < 3.0)
       mixlib-shellout (>= 1.0, < 3.0)
       murmurhash3 (~> 0.1.6)
@@ -62,8 +62,7 @@ GEM
     i18n (0.8.1)
     inifile (3.0.0)
     json (2.0.3)
-    kubeclient (1.1.4)
-      activesupport
+    kubeclient (2.3.0)
       http (= 0.9.8)
       recursive-open-struct (= 1.0.0)
       rest-client
